@@ -1,0 +1,7 @@
+(node:22632) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Nothing to compile
+No need to generate any newer typings.
+deploying "HODLVault" (tx: 0x900960afd8e0c140c5a0a27b81639e8fc03e15d65fb48883120783bc402295a4)...: deployed at 0x5FbDB2315678afecb367f032d93F642f64180aa3 with 292979 gas
+≡ƒÜÇ HODLVault deployed!
+≡ƒô¥ Updated TypeScript contract definition file on ../nextjs/contracts/deployedContracts.ts
