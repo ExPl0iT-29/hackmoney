@@ -21,3 +21,12 @@ node_modules
 
 # cli
 dist
+
+# AI Agents & IDEs
+.agents/
+.claude/
+.cursor/
+.opencode/
+opencode.json
+AGENTS.md
+CLAUDE.md
