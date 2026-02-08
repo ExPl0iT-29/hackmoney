@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { EtherInput } from "@scaffold-ui/components";
 import type { NextPage } from "next";
 import { formatEther } from "viem";
-import { useAccount } from "wagmi";
-import { LockClosedIcon, LockOpenIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
-import { EtherInput } from "@scaffold-ui/components";
-import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { parseEther } from "viem";
+import { useAccount } from "wagmi";
+import { ArrowPathIcon, LockClosedIcon, LockOpenIcon } from "@heroicons/react/24/outline";
+import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -59,7 +59,6 @@ const Home: NextPage = () => {
       console.error("Error locking funds", e);
     }
   };
-
 
   const handleWithdraw = async () => {
     try {
@@ -127,10 +126,7 @@ const Home: NextPage = () => {
             <div className="space-y-4 pt-4 border-t border-primary/10">
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-bold pl-2">Amount to Lock (24h)</label>
-                <EtherInput
-                  onValueChange={({ valueInEth }) => setLockAmount(valueInEth)}
-                  placeholder="0.01"
-                />
+                <EtherInput onValueChange={({ valueInEth }) => setLockAmount(valueInEth)} placeholder="0.01" />
               </div>
 
               <div className="grid grid-cols-2 gap-4 pt-2">
@@ -143,8 +139,9 @@ const Home: NextPage = () => {
                   Lock ETH
                 </button>
                 <button
-                  className={`btn btn-secondary btn-md rounded-xl font-bold shadow-lg transition-all ${!isLocked && hasBalance ? "hover:shadow-secondary/20" : ""
-                    }`}
+                  className={`btn btn-secondary btn-md rounded-xl font-bold shadow-lg transition-all ${
+                    !isLocked && hasBalance ? "hover:shadow-secondary/20" : ""
+                  }`}
                   onClick={handleWithdraw}
                   disabled={isLocked || !hasBalance}
                 >
@@ -178,4 +175,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
